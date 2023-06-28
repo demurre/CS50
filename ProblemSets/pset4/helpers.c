@@ -91,9 +91,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
             // Calculate average values
-            temp[i][j].rgbtRed = round((float)sumRed / count);
-            temp[i][j].rgbtGreen = round((float)sumGreen / count);
-            temp[i][j].rgbtBlue = round((float)sumBlue / count);
+            temp[i][j].rgbtRed = round((float) sumRed / count);
+            temp[i][j].rgbtGreen = round((float) sumGreen / count);
+            temp[i][j].rgbtBlue = round((float) sumBlue / count);
         }
     }
     // Copy blurred values from temp image to the original image

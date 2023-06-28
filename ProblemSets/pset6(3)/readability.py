@@ -1,11 +1,13 @@
 import math
 
+
 def count_letters(text):
     count = 0
     for char in text:
         if char.isalpha():
             count += 1
     return count
+
 
 def count_words(text):
     count = 1  # Start with 1 to account for the last word
@@ -14,12 +16,14 @@ def count_words(text):
             count += 1
     return count
 
+
 def count_sentences(text):
     count = 0
     for char in text:
-        if char in ['.', '!', '?']:
+        if char in [".", "!", "?"]:
             count += 1
     return count
+
 
 text = input("Text: ")
 num_letters = count_letters(text)

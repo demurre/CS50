@@ -1,5 +1,6 @@
 from cs50 import get_float
 
+
 def get_cents():
     while True:
         n = get_float("Change owed: ")
@@ -9,10 +10,12 @@ def get_cents():
             print("Please enter a non-negative value.")
     return round(n * 100)
 
+
 def calculate_coins(cents, denomination):
     coins = cents // denomination
     cents = cents % denomination
     return coins, cents
+
 
 def main():
     cents = get_cents()
