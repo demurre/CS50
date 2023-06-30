@@ -1,0 +1,5 @@
+//If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
+By: danceability, energy, loudness, speechiness, valence, tempo.
+//Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
+The way the audio aura is calculated based solely on audio features might not be fully representative of the listener for several reasons: subjectivity and personal preferences and context and meaning.
+To improve the characterization of the audio aura additional approaches can be considered: incorporate user feedback, leverage listening patterns, social and contextual data, emotion analysis
