@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+
+        function checkAnswer(button) {
+            var selectedButton = button;
+            var allButtons = document.getElementsByClassName("answer-choice");
+
+            for (var i = 0; i < allButtons.length; i++) {
+                if (allButtons[i] === selectedButton) {
+                    if (allButtons[i].textContent === "Kyiv") {
+                        allButtons[i].classList.add("correct-answer");
+                        document.getElementById("feedback").textContent = "Correct!";
+                    } else {
+                        allButtons[i].classList.add("incorrect-answer");
+                        document.getElementById("feedback").textContent = "Incorrect";
+                    }
+                } else {
+                    allButtons[i].disabled = true;
+                }
+            }
+        }
+
+        function checkFreeResponse() {
+            var userInput = document.getElementById("free-response-input").value;
+            var feedbackDiv = document.getElementById("feedback");
+
+            if (userInput.toLowerCase() === "leonardo da vinci") {
+                document.getElementById("free-response-input").classList.add("correct-answer");
+                feedbackDiv.textContent = "Correct!";
+            } else {
+                document.getElementById("free-response-input").classList.add("incorrect-answer");
+                feedbackDiv.textContent = "Incorrect";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice</h2>
+            <hr>
+            <h3>What is the capital of Ukraine?</h3>
+            <button class="answer-choice" onclick="checkAnswer(this)">Kyiv</button>
+            <button class="answer-choice" onclick="checkAnswer(this)">London</button>
+            <button class="answer-choice" onclick="checkAnswer(this)">Berlin</button>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <h3>Who painted the Mona Lisa?</h3>
+            <input type="text" id="free-response-input">
+            <button onclick="checkFreeResponse()">Confirm</button>
+        </div>
+
+        <div id="feedback"></div>
+    </div>
+</body>
+
+</html>
