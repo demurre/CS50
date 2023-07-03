@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+    <title>Anime</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">My Webpage</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page1.html">Basketball</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page2.html">Programming language</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page3.html">Anime</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container mt-5">
+            <h1>Recommend anime</h1>
+            <div class="anime-content" id="anime-content"></div>
+        </section>
+    </main>
+
+    <footer class="bg-light text-center p-3 mt-5">
+        &copy; 2023 My Webpage. All rights reserved.
+    </footer>
+
+    <script type="text/javascript">
+        const animes = [
+            {
+                id: 1,
+                image: "https://cdn.myanimelist.net/images/anime/1208/94745.jpg",
+                title: "Fullmetal Alchemist: Brotherhood",
+                link: "https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood"
+
+            },
+            {
+                id: 2,
+                title: "Monster",
+                image: "https://cdn.myanimelist.net/images/anime/10/18793.jpg",
+                link: "https://myanimelist.net/anime/19/Monster"
+            },
+            {
+                id: 3,
+                title: "Bleach: Thousand-Year Blood War",
+                image: "https://cdn.myanimelist.net/images/anime/1908/135431.jpg",
+                link: "https://myanimelist.net/anime/41467/Bleach__Sennen_Kessen-hen"
+            },
+
+        ]
+
+        const root = document.getElementById("anime-content")
+
+        const main = () => {
+            animes.forEach(({ title, description, image, link }) => {
+                const container = document.createElement("div")
+                container.classList.add("card")
+                container.classList.add("m-5")
+                container.style.width = "20rem"
+
+                const logo = document.createElement("img")
+                logo.classList.add("card-img-top")
+                logo.src = image
+                container.appendChild(logo)
+
+                const content = document.createElement("div")
+                content.classList.add("card-body")
+
+                const titleEl = document.createElement("h5")
+                titleEl.classList.add("card-title")
+                titleEl.innerHTML = title
+                content.appendChild(titleEl)
+
+                const linkEl = document.createElement("a")
+                linkEl.classList.add("btn")
+                linkEl.classList.add("btn-primary")
+                linkEl.innerHTML = "Show more"
+                linkEl.href = link
+                content.appendChild(linkEl)
+                container.appendChild(content)
+                root.appendChild(container)
+            });
+        }
+
+        main()
+    </script>
+</body>
+
+</html>

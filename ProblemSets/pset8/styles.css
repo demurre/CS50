@@ -1,0 +1,68 @@
+h1 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #87CEFA;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #f9f9f9;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+main {
+    min-height: calc(100vh - 209px);
+}
+
+.anime-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 1300px;
+    margin-left: -200px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.navbar {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 20px;
+    }
+}
